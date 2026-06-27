@@ -139,21 +139,7 @@ npm run dev
 
 Open **http://localhost:5173** in your browser.
 
----
 
-## ☁️ Deployment (Hugging Face Spaces)
-
-This project is configured out-of-the-box for **Hugging Face Spaces** using Docker.
-
-1. Go to [Hugging Face](https://huggingface.co/spaces) and create a new **Docker Space**.
-2. Upload the contents of the `backend/` folder directly into the root of your new Space.
-3. In your Space's Settings, add your API keys (`GROQ_API_KEY`, `MISTRAL_API_KEY`) as **Secrets**.
-4. Hugging Face will automatically build the `Dockerfile` and start the backend on port `7860`.
-5. Deploy the `frontend/` folder to a static host (like Vercel, Netlify, or GitHub Pages) and update the API base URL in the frontend code to point to your new Hugging Face Space URL.
-
-> **Note on Data Persistence**: Hugging Face Spaces use ephemeral storage by default. If you use the Q&A Management UI to edit `questions.json`, those changes will be lost when the space restarts. For permanent edits, update the JSON file in your Git repository or upgrade to persistent storage on Hugging Face.
-
----
 
 ## 🛠️ Q&A Management System
 
