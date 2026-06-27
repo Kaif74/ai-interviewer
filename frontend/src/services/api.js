@@ -6,8 +6,10 @@
 
 import axios from 'axios';
 
+const BASE_URL = import.meta.env.VITE_API_URL || '/api';
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: BASE_URL,
   timeout: 120000, // 2 min — accounts for STT + LLM + TTS chain
 });
 
@@ -81,7 +83,7 @@ export async function sendResponseStream(interviewId, audioBlob, onChunk, onDone
   formData.append('interviewId', interviewId);
   formData.append('audio', audioBlob, 'recording.webm');
 
-  const response = await fetch('/api/interview/respond/stream', {
+  const response = await fetch(`${BASE_URL}/interview/respond/stream`, {
     method: 'POST',
     body: formData,
   });
