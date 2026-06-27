@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "domain": "Software Engineer Screening",
+    "version": "1.0",
+    "languages": ["en", "hi", "de"]
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "order": 1,
+      "topic": "background",
+      "question": {
+        "en": "Tell me about yourself and your experience as a software engineer.",
+        "hi": "मुझे अपने बारे में और एक सॉफ्टवेयर इंजीनियर के रूप में अपने अनुभव के बारे में बताएं।",
+        "de": "Erzählen Sie mir von sich und Ihrer Erfahrung als Softwareentwickler."
+      },
+      "key_points": [
+        "Mentions years of experience clearly",
+        "Names specific technologies or stacks they have worked with",
+        "Describes at least one meaningful project or role",
+        "Shows progression or growth in career",
+        "Is concise and structured (not rambling)"
+      ],
+      "ideal_answer_summary": "A strong answer gives a brief career arc (how long, what kind of work), names 2-3 concrete technologies or domains they know well, highlights one significant project or achievement, and closes with why they are interested in this kind of role. It should be 60-90 seconds long and feel rehearsed but natural.",
+      "follow_up_probe": {
+        "en": "You mentioned your experience — can you tell me more about the scale or impact of that work?",
+        "hi": "आपने अपने अनुभव का उल्लेख किया — क्या आप उस काम के पैमाने या प्रभाव के बारे में अधिक बता सकते हैं?",
+        "de": "Sie haben Ihre Erfahrung erwähnt — können Sie mir mehr über den Umfang oder die Auswirkungen dieser Arbeit erzählen?"
+      },
+      "coaching_note": "A strong intro names specific tech, projects, and impact — not just job titles and years."
+    },
+    {
+      "id": "q2",
+      "order": 2,
+      "topic": "data_structures",
+      "question": {
+        "en": "Explain the difference between a stack and a queue. When would you use each?",
+        "hi": "स्टैक और क्यू के बीच अंतर समझाएं। आप प्रत्येक का उपयोग कब करेंगे?",
+        "de": "Erklären Sie den Unterschied zwischen einem Stack und einer Queue. Wann würden Sie welche verwenden?"
+      },
+      "key_points": [
+        "Stack is LIFO (Last In First Out)",
+        "Queue is FIFO (First In First Out)",
+        "Stack use cases: function call stack, undo/redo, backtracking algorithms like DFS",
+        "Queue use cases: task scheduling, BFS, message queues",
+        "Both have O(1) operations for primary operations"
+      ],
+      "ideal_answer_summary": "Stack = LIFO, used for recursion/call stack, undo operations, DFS. Queue = FIFO, used for BFS, job scheduling, buffering. Both have O(1) operations. A strong answer gives concrete real-world examples for each, not just definitions.",
+      "follow_up_probe": {
+        "en": "Can you give me a concrete coding example where you would choose one over the other?",
+        "hi": "क्या आप मुझे एक ठोस कोडिंग उदाहरण दे सकते हैं जहाँ आप एक को दूसरे पर चुनेंगे?",
+        "de": "Können Sie mir ein konkretes Programmierbeispiel geben, bei dem Sie das eine dem anderen vorziehen würden?"
+      },
+      "coaching_note": "The key differentiator is LIFO vs FIFO, plus real use-case examples — not just abstract definitions."
+    },
+    {
+      "id": "q3",
+      "order": 3,
+      "topic": "system_design",
+      "question": {
+        "en": "How would you design a URL shortener like bit.ly? Walk me through your approach.",
+        "hi": "आप bit.ly जैसा URL शॉर्टनर कैसे डिज़ाइन करेंगे? मुझे अपना दृष्टिकोण बताएं।",
+        "de": "Wie würden Sie einen URL-Verkürzer wie bit.ly entwerfen? Erläutern Sie mir Ihren Ansatz."
+      },
+      "key_points": [
+        "Clarifies requirements: read vs write ratio, scale, custom URLs, analytics",
+        "Proposes a hash or ID generation strategy (base62 encoding, counter-based)",
+        "Mentions a database schema: short_code to original_url mapping",
+        "Discusses caching with Redis for frequent reads",
+        "Mentions redirection strategy: 301 vs 302 and why it matters",
+        "Considers collision handling",
+        "Thinks about scale: sharding, CDN, rate limiting"
+      ],
+      "ideal_answer_summary": "Strong answer: clarify requirements first (scale, features), propose base62 hash or counter-based ID generation, simple DB table (short_code, original_url, created_at, user_id), Redis cache for hot URLs, 301 vs 302 redirect tradeoff (301 = cached by browser, 302 = trackable hits), handle collisions, mention horizontal scaling via sharding.",
+      "follow_up_probe": {
+        "en": "What is the tradeoff between using a 301 and a 302 redirect, and which would you choose?",
+        "hi": "301 और 302 रीडायरेक्ट का उपयोग करने के बीच क्या ट्रेडऑफ़ है, और आप कौन सा चुनेंगे?",
+        "de": "Was ist der Kompromiss zwischen einer 301- und einer 302-Weiterleitung, und welche würden Sie wählen?"
+      },
+      "coaching_note": "System design answers should always start with requirements clarification, then API, then data model, then scale concerns."
+    },
+    {
+      "id": "q4",
+      "order": 4,
+      "topic": "algorithms",
+      "question": {
+        "en": "What is the time complexity of quicksort in the best, average, and worst case? Why does the worst case happen?",
+        "hi": "सर्वोत्तम, औसत और सबसे खराब स्थिति में क्विकसॉर्ट की समय जटिलता क्या है? सबसे खराब स्थिति क्यों होती है?",
+        "de": "Wie ist die Zeitkomplexität von Quicksort im besten, durchschnittlichen und schlechtesten Fall? Warum tritt der schlechteste Fall auf?"
+      },
+      "key_points": [
+        "Best case O(n log n): pivot always splits array in half",
+        "Average case O(n log n)",
+        "Worst case O(n squared): pivot is always the smallest or largest element",
+        "Worst case happens with sorted input and naive pivot selection",
+        "Mitigation: random pivot selection or median-of-three",
+        "Space complexity O(log n) on average for call stack"
+      ],
+      "ideal_answer_summary": "Best/average O(n log n), worst O(n squared). Worst case triggered when pivot is always min or max — typically sorted input with first/last element as pivot. Fix: randomise pivot or use median-of-three. Space: O(log n) recursion stack average. Quicksort is often faster than mergesort in practice due to cache locality.",
+      "follow_up_probe": {
+        "en": "How would you mitigate the worst case in practice?",
+        "hi": "आप व्यवहार में सबसे खराब स्थिति को कैसे कम करेंगे?",
+        "de": "Wie würden Sie den schlechtesten Fall in der Praxis abmildern?"
+      },
+      "coaching_note": "Most candidates know O(n log n) but miss the why of the worst case. The answer should explain the pivot selection mechanism."
+    },
+    {
+      "id": "q5",
+      "order": 5,
+      "topic": "databases",
+      "question": {
+        "en": "When would you choose a NoSQL database over a relational database? Give a concrete example.",
+        "hi": "आप रिलेशनल डेटाबेस की तुलना में NoSQL डेटाबेस कब चुनेंगे? एक ठोस उदाहरण दें।",
+        "de": "Wann würden Sie eine NoSQL-Datenbank einer relationalen Datenbank vorziehen? Geben Sie ein konkretes Beispiel."
+      },
+      "key_points": [
+        "Schema flexibility: NoSQL for dynamic or evolving schemas",
+        "Scale: NoSQL for horizontal scaling and massive write throughput",
+        "Data model fit: NoSQL for document, graph, or key-value patterns",
+        "Consistency: SQL for ACID transactions, NoSQL trades consistency for availability",
+        "Concrete example given (e.g. product catalog, activity logs, leaderboard)",
+        "Acknowledges tradeoffs — does not say NoSQL is always better"
+      ],
+      "ideal_answer_summary": "Choose NoSQL when schema is flexible, you need horizontal scaling at massive write volumes, or data fits a non-relational model. Example: MongoDB for product catalog with varying attributes, or Redis for real-time leaderboard. Choose SQL when you need ACID transactions and complex joins. Never say one is universally better — show awareness of CAP theorem.",
+      "follow_up_probe": {
+        "en": "Have you ever had to migrate between database types? What challenges did you face?",
+        "hi": "क्या आपको कभी डेटाबेस प्रकारों के बीच माइग्रेट करना पड़ा है? आपने किन चुनौतियों का सामना किया?",
+        "de": "Mussten Sie jemals zwischen Datenbanktypen migrieren? Welche Herausforderungen sind dabei aufgetreten?"
+      },
+      "coaching_note": "The best answers demonstrate CAP theorem awareness and give a real use case, not just abstract criteria."
+    },
+    {
+      "id": "q6",
+      "order": 6,
+      "topic": "problem_solving",
+      "question": {
+        "en": "Tell me about a bug that was difficult to find and fix. How did you approach it?",
+        "hi": "मुझे एक ऐसे बग के बारे में बताएं जिसे ढूंढना और ठीक करना मुश्किल था। आपने इसे कैसे हल किया?",
+        "de": "Erzählen Sie mir von einem Fehler, der schwer zu finden und zu beheben war. Wie sind Sie dabei vorgegangen?"
+      },
+      "key_points": [
+        "Describes a real specific bug, not a generic story",
+        "Explains debugging methodology: logs, reproducibility, isolation, hypothesis testing",
+        "Shows systematic thinking rather than random trial-and-error",
+        "Explains root cause clearly",
+        "Describes the fix and why it worked",
+        "Mentions what they learned or how they prevented recurrence"
+      ],
+      "ideal_answer_summary": "A strong answer uses STAR format: specific bug in a real system, how they isolated it (logging, bisecting, reproduction steps, debugger tools), what the root cause turned out to be, how they fixed it, and what they put in place to prevent it (test, monitoring, documentation). The best answers show methodical thinking, not luck.",
+      "follow_up_probe": {
+        "en": "What tooling or process did you put in place after that to prevent similar bugs?",
+        "hi": "इसके बाद आपने ऐसे बगों को रोकने के लिए क्या टूलिंग या प्रक्रिया लागू की?",
+        "de": "Welche Tools oder Prozesse haben Sie danach eingeführt, um ähnliche Fehler zu verhindern?"
+      },
+      "coaching_note": "Debugging stories should show methodology, not just outcome. How they found it matters more than what the bug was."
+    },
+    {
+      "id": "q7",
+      "order": 7,
+      "topic": "concurrency",
+      "question": {
+        "en": "What is a race condition? How do you prevent them?",
+        "hi": "रेस कंडीशन क्या है? आप उन्हें कैसे रोकते हैं?",
+        "de": "Was ist eine Race Condition? Wie verhindert man sie?"
+      },
+      "key_points": [
+        "Race condition: two threads access shared state concurrently and outcome depends on timing",
+        "Classic example: two threads both read and increment a counter",
+        "Prevention via mutexes or locks around critical section",
+        "Prevention via atomic operations for simple cases",
+        "Prevention via immutable data structures",
+        "Prevention via message passing instead of shared memory",
+        "Mentions deadlock as a risk of naive locking"
+      ],
+      "ideal_answer_summary": "Race condition = non-deterministic outcome when multiple threads access shared mutable state concurrently. Classic: two threads both read count=5, both write count=6, result should be 7. Fix: mutex around critical section, atomic operations for simple increments, or avoid shared state via message passing. Bonus: mention deadlock risk with naive locking and how to avoid it.",
+      "follow_up_probe": {
+        "en": "Can you give a concrete code-level example of where a race condition could occur and how you would fix it?",
+        "hi": "क्या आप एक ठोस कोड-स्तरीय उदाहरण दे सकते हैं जहाँ रेस कंडीशन हो सकती है और आप इसे कैसे ठीक करेंगे?",
+        "de": "Können Sie ein konkretes Beispiel auf Code-Ebene nennen, wo eine Race Condition auftreten könnte, und wie Sie sie beheben würden?"
+      },
+      "coaching_note": "Definition is table stakes. Strong answers give a concrete example and name multiple prevention strategies with their tradeoffs."
+    },
+    {
+      "id": "q8",
+      "order": 8,
+      "topic": "api_design",
+      "question": {
+        "en": "What makes a REST API well-designed? What are common mistakes you see?",
+        "hi": "एक REST API को अच्छी तरह से डिज़ाइन क्या बनाता है? आप कौन सी सामान्य गलतियाँ देखते हैं?",
+        "de": "Was macht eine REST-API gut gestaltet? Welche häufigen Fehler sehen Sie?"
+      },
+      "key_points": [
+        "Resource-based URLs using nouns not verbs: /users not /getUsers",
+        "Correct HTTP verb usage: GET, POST, PUT, PATCH, DELETE",
+        "Consistent and meaningful status codes: 200, 201, 400, 401, 403, 404, 422, 500",
+        "Versioning strategy: /v1/ in path or via Accept header",
+        "Pagination for list endpoints",
+        "Clear error response format with message and error code",
+        "Common mistakes: verbs in URLs, misusing status codes, no versioning, inconsistent naming"
+      ],
+      "ideal_answer_summary": "Good REST API: nouns in URLs, correct verb semantics, meaningful status codes (201 for created, 422 for validation errors), versioning in path, pagination on lists, consistent error format. Common mistakes: verbs in URLs, returning 200 for everything, no pagination, breaking changes without versioning.",
+      "follow_up_probe": {
+        "en": "How would you handle breaking changes to a public API that existing clients depend on?",
+        "hi": "आप एक सार्वजनिक API में ब्रेकिंग बदलावों को कैसे संभालेंगे जिस पर मौजूदा क्लाइंट निर्भर हैं?",
+        "de": "Wie würden Sie Breaking Changes an einer öffentlichen API handhaben, von der bestehende Clients abhängig sind?"
+      },
+      "coaching_note": "REST design goes beyond knowing what REST is. Strong answers cite specific naming conventions, status code semantics, and versioning strategy."
+    },
+    {
+      "id": "q9",
+      "order": 9,
+      "topic": "devops",
+      "question": {
+        "en": "What happens from the moment you push code to GitHub to when it is live in production? Describe the ideal pipeline.",
+        "hi": "जिस क्षण आप GitHub पर कोड पुश करते हैं से लेकर जब यह प्रोडक्शन में लाइव हो — आदर्श पाइपलाइन का वर्णन करें।",
+        "de": "Was passiert von dem Moment, in dem Sie Code auf GitHub pushen, bis er in der Produktion live ist? Beschreiben Sie die ideale Pipeline."
+      },
+      "key_points": [
+        "CI triggered: linting, unit tests, integration tests",
+        "Build stage: Docker image or artifact created",
+        "Security scan: dependency vulnerabilities, SAST",
+        "Staging deployment and smoke tests",
+        "Manual approval gate or automated canary or blue-green deploy",
+        "Production deployment with zero-downtime strategy",
+        "Post-deploy monitoring: error rates, latency, alerts",
+        "Rollback strategy if metrics degrade"
+      ],
+      "ideal_answer_summary": "Push triggers CI (lint, unit, integration tests), Docker build, security scan, staging deploy, smoke tests, approval gate, blue-green or rolling deploy to production, monitor error rates and p99 latency, automated rollback if thresholds breached. Strong answers mention zero-downtime deployment and observability, not just tests-pass-then-deploy.",
+      "follow_up_probe": {
+        "en": "How would you handle a deployment that passes all tests but breaks in production for 10 percent of users?",
+        "hi": "आप ऐसी तैनाती को कैसे संभालेंगे जो सभी परीक्षण पास करती है लेकिन 10 प्रतिशत उपयोगकर्ताओं के लिए प्रोडक्शन में टूट जाती है?",
+        "de": "Wie würden Sie mit einem Deployment umgehen, das alle Tests besteht, aber für 10 Prozent der Nutzer in der Produktion fehlschlägt?"
+      },
+      "coaching_note": "The ideal pipeline includes observability and rollback. Most candidates stop at CI/CD. Push them to think about production monitoring."
+    },
+    {
+      "id": "q10",
+      "order": 10,
+      "topic": "behavioral",
+      "question": {
+        "en": "Tell me about a time you disagreed with a technical decision made by your team. What did you do?",
+        "hi": "मुझे एक ऐसे समय के बारे में बताएं जब आप अपनी टीम द्वारा लिए गए तकनीकी निर्णय से असहमत थे। आपने क्या किया?",
+        "de": "Erzählen Sie mir von einer Situation, in der Sie einer technischen Entscheidung Ihres Teams nicht zugestimmt haben. Was haben Sie getan?"
+      },
+      "key_points": [
+        "Describes a real specific disagreement, not hypothetical",
+        "Raised concern through appropriate channel: 1-on-1, design review, or RFC",
+        "Used data or concrete reasoning, not just personal opinion",
+        "Respected the final decision even if not their preferred choice",
+        "Did not undermine the team or bypass the process",
+        "Reflects on outcome and what they learned"
+      ],
+      "ideal_answer_summary": "Strong STAR answer: specific technical disagreement, they raised it constructively with data, gave the team a fair hearing, accepted the decision and committed, reflects on whether outcome proved them right or wrong. Shows they can disagree without being disruptive and can change their mind with new information.",
+      "follow_up_probe": {
+        "en": "Looking back, do you think the team made the right call? What would you do differently now?",
+        "hi": "पीछे मुड़कर देखें, क्या आपको लगता है कि टीम ने सही निर्णय लिया? अब आप क्या अलग करेंगे?",
+        "de": "Rückblickend glauben Sie, dass das Team die richtige Entscheidung getroffen hat? Was würden Sie heute anders machen?"
+      },
+      "coaching_note": "This tests communication and maturity. The answer should show constructive dissent and self-reflection, not just compliance."
+    }
+  ]
+}
